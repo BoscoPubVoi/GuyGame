@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck4log1ly4qik"]
+
+[ext_resource type="PackedScene" uid="uid://c2fgfdyc1spmg" path="res://Fellas/base_fella.tscn" id="1_v1gvq"]
+
+[node name="Fella1" groups=["one"] instance=ExtResource("1_v1gvq")]
+
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(0.792157, 0.521569, 0, 1)

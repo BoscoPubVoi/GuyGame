@@ -8,3 +8,21 @@ script = ExtResource("1_kxld0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qb0k8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="resources" type="Label" parent="."]
+offset_left = -565.0
+offset_top = -313.0
+offset_right = -83.0
+offset_bottom = -251.0
+text = "Hi there"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -565.0
+offset_top = 288.0
+offset_right = -193.0
+offset_bottom = 314.0
+text = "It costs 10 wood and 10 rock to create a building
+"

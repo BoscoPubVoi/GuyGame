@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://br18lttafvlk5"]
+
+[ext_resource type="PackedScene" uid="uid://c2fgfdyc1spmg" path="res://Fellas/base_fella.tscn" id="1_5v26a"]
+
+[node name="Fella2" groups=["two"] instance=ExtResource("1_5v26a")]
