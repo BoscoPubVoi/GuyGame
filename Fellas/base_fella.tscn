@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2fgfdyc1spmg"]
+
+[ext_resource type="Script" path="res://Fellas/base_fella.gd" id="1_4fste"]
+[ext_resource type="Texture2D" uid="uid://csv0atl4whia1" path="res://assetts/Fella.png" id="1_vxxb4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhn82"]
+radius = 56.4358
+
+[node name="BaseFella" type="Node2D" groups=["fella"]]
+script = ExtResource("1_4fste")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vxxb4")
+
+[node name="DetectionRadius" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRadius"]
+shape = SubResource("CircleShape2D_bhn82")
+
+[node name="StateLabel" type="Label" parent="."]
+offset_left = -32.0
+offset_top = -56.0
+offset_right = 32.0
+offset_bottom = -33.0
+text = "State:"
+horizontal_alignment = 1
+
+[node name="ShotTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="GatherTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="G" type="Label" parent="."]
+visible = false
+offset_left = -64.0
+offset_top = -78.0
+offset_right = 62.0
+offset_bottom = -52.0
+text = "Gathering Wood"
+
+[connection signal="area_entered" from="DetectionRadius" to="." method="_on_detection_radius_area_entered"]
+[connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]
+[connection signal="timeout" from="GatherTimer" to="." method="_on_gather_timer_timeout"]
